@@ -19,16 +19,6 @@ except Exception as e:
 # Load model and processor locally
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-# try:
-#     print("🔄 Loading model...")
-#     model_name = "openai/whisper-small"
-#     processor = WhisperProcessor.from_pretrained(model_name)
-#     model = WhisperForConditionalGeneration.from_pretrained(model_name).to(device)
-#     print("✅ Model loaded successfully!")
-# except Exception as e:
-#     print("❌ Error loading model:", e)
-#     exit(1)
-
 
 def transcribe(audio_path):
     print(f"📢 Processing file: {audio_path}")
@@ -76,6 +66,3 @@ def transcribe(audio_path):
 # Test Function
 text = transcribe("rec2.wav")
 print("📝 Transcription:", text)
-
-
-
